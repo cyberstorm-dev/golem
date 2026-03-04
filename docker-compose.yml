@@ -9,6 +9,7 @@ services:
       - LEDGER_URL=http://100.73.228.90:3000/planner/ops-ledger.git
       - NODE_NAME=watchtower
       - GITEA_TOKEN=${GITEA_TOKEN}
+      - "GIT_SSH_COMMAND=ssh -o LogLevel=ERROR -o StrictHostKeyChecking=accept-new -o UserKnownHostsFile=/tmp/ssh_known_hosts"
     command: ["http://100.73.228.90:3000/planner/ops-ledger.git", "watchtower"]
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
